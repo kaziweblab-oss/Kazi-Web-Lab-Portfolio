@@ -1,0 +1,66 @@
+/*----------------------
+ Nav Section Starts Here 
+------------------------*/
+
+.nav {
+  flex-direction: row-reverse;
+  box-shadow: 0 5px 10px rgba(132, 116, 240, 0.4);
+}
+
+.logo {
+  width: 50%;
+  margin: 2% 0 0 2%;
+}
+.nav-bar {
+  width: 150%;
+  justify-content: space-around;
+}
+
+.logo {
+  justify-content: left;
+}
+
+.logo img {
+  max-width: 70%;
+  margin: -5% 0 0 -5%;
+}
+
+.nav-bar {
+  display: flex;
+  transform: none;
+  transition: none;
+  position: static;
+  width: 150%;
+  height: auto;
+  justify-content: center;
+  box-shadow: none;
+  align-items: center;
+  padding-left: 0;
+}
+
+.nav-menu {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.nav-icon,
+.sticky-nav-btn {
+  display: none;
+}
+
+/*---------------------
+ Nav Section Ends Here 
+-----------------------*/
+
+/*-----------------------
+ Hero Section Starts Here
+-------------------------*/
+
+.hero-section {
+  margin-top: 7%;
+}
+
+/*---------------------
+ Hero Section Ends Here
+-----------------------*/

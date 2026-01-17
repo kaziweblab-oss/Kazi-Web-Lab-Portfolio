@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!----------------------
+     Adding Font Awsome CDN 
+    ------------------------>
+    <script
+      src="https://kit.fontawesome.com/32bf79a614.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-------------------
+     Adding Google Fonts 
+    --------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!----------
+     Adding CSS
+    ------------>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="css/Mobile (Landscape).css"
+      media="screen and (min-width: 576px)"
+    />
+    <link
+      rel="stylesheet"
+      href="css/Tablets.css"
+      media="screen and (min-width: 768px)"
+    />
+    <link
+      rel="stylesheet"
+      href="css/Laptops.css"
+      media="screen and (min-width: 992px)"
+    />
+    <link
+      rel="stylesheet"
+      href="css/Desktops.css"
+      media="screen and (min-width: 1200px)"
+    />
+    <link
+      rel="stylesheet"
+      href="css/Large Screens.css"
+      media="screen and (min-width: 1400px)"
+    />
+
+    <title>KWL Protfolio</title>
+  </head>
+
+  <body>
+    <div class="body">
+      <!------------------
+       Welcome To My Code 
+      -------------------->
+
+      <!----------------------
+       Nav Section Start Here  
+      ------------------------>
+      <nav class="nav" id="nav">
+        <div class="my"></div>
+        <div class="my1"></div>
+        <div class="my2"></div>
+        <div class="my3"></div>
+        <div class="nav-bar" id="nav-bar">
+          <ul class="nav-menu">
+            <li class="nav-menu__list">
+              <a href="#" class="nav-menu__link">Home</a>
+            </li>
+            <li class="nav-menu__list">
+              <a href="#about-me" class="nav-menu__link">About Me</a>
+            </li>
+            <li class="nav-menu__list">
+              <a href="#projects" class="nav-menu__link">Project's</a>
+            </li>
+            <li class="nav-menu__list">
+              <a href="#contact" class="nav-menu__link">Contact Me</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-icon">
+          <p class="nav-icon__logo">
+            <a id="nav-btn"><i class="fa-solid fa-list"></i></a>
+          </p>
+        </div>
+
+        <div class="logo">
+          <img src="image/kwl-logo.png" alt="kwl-logo" />
+        </div>
+      </nav>
+
+      <!---------------------------------------
+       Hidden Nav Button for Sticky Nav Button 
+      ----------------------------------------->
+      <div class="sticky-nav-btn" id="second-btn">
+        <i class="fa-solid fa-list"></i>
+      </div>
+
+      <!-----------------------------------------------------------------
+       Overlay div for Blur screen when nav mune is open in small screen 
+      ------------------------------------------------------------------->
+      <div id="overlay" class=""></div>
+      <!--------------------
+       Nav Section End Here  
+      ---------------------->
+
+      <!-----------------------
+       Hero Section Start Here  
+      ------------------------->
+      <div class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Hi, I'm <span class="name-glow">Tasin</span>
+          </h1>
+          <h2 class="hero-sub">I am a <span class="typewriter"></span></h2>
+          <p class="hero-bio">
+            Crafting clean, responsive, and high-performance websites that turn
+            your ideas into digital reality. Let’s build something
+            extraordinary.
+          </p>
+          <div class="hero-btns">
+            <a
+              href="https://www.fiverr.com/s/akVap5W"
+              target="_blank"
+              class="btn-primary"
+              >Hire Me</a
+            >
+            <a href="#projects" class="btn-secondary">View Work</a>
+          </div>
+        </div>
+
+        <div class="hero-pic">
+          <img src="image/My pic.png" alt="" />
+        </div>
+      </div>
+      <!---------------------
+       Hero Section End Here 
+      ----------------------->
+
+      <!------------------------------
+       Technology Section Starts Here 
+      -------------------------------->
+      <section class="tech-section">
+        <h2 class="section-title">Technologies I Use</h2>
+        <div class="tech-container">
+          <div class="tech-card">
+            <i class="fa-brands fa-html5"></i>
+            <p>HTML5</p>
+          </div>
+          <div class="tech-card">
+            <i class="fa-brands fa-css3-alt"></i>
+            <p>CSS3</p>
+          </div>
+          <div class="tech-card">
+            <i class="fa-brands fa-js"></i>
+            <p>JavaScript</p>
+          </div>
+          <div class="tech-card">
+            <i class="fa-brands fa-bootstrap"></i>
+            <p>Bootstrap</p>
+          </div>
+          <div class="tech-card group">
+            <i class="fa-solid fa-wind" style="color: #38bdf8"></i>
+            <p>Tailwind CSS</p>
+          </div>
+          <div class="tech-card">
+            <i class="fa-brands fa-react"></i>
+            <p>React</p>
+          </div>
+        </div>
+      </section>
+      <!----------------------------
+       Technology Section Ends Here  
+      ------------------------------>
+
+      <!----------------------------
+       Projects Section Starts Here 
+      ------------------------------>
+      <section id="projects" class="project-section">
+        <h2 class="section-title">My Recent Projects</h2>
+        <div class="title-underline"></div>
+
+        <div class="project-container">
+          <div class="project-card">
+            <div class="project-img">
+              <img src="image/Project 1.jpg" alt="Project 1" />
+              <div class="project-overlay">
+                <a
+                  href="https://kwl-project-1.vercel.app/"
+                  target="_blank"
+                  class="view-btn"
+                  >View Live</a
+                >
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Resturent Website</h3>
+              <p>
+                A fully responsive online store built with React and Tailwind
+                CSS.
+              </p>
+              <div class="project-tags">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>BOOTSTRAP5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-------------------------
+       Projects Section End Here  
+      --------------------------->
+
+      <!----------------------------
+       About Me Section Starts Here
+      ------------------------------>
+      <section id="about" class="about-section">
+        <div class="container">
+          <div class="about-wrapper">
+            <div class="about-visual">
+              <div class="visual-box">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="visual-content">
+                  <i class="fa-solid fa-user-gear"></i>
+                  <p>Web Solutions</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-text" id="about-me">
+              <h2 class="section-title">
+                A Bit <span class="text-blue">About Me</span>
+              </h2>
+              <p>
+                Hello! I’m a passionate Web Developer with a constant drive to
+                learn and take on new challenges. I believe a great website
+                isn’t just about aesthetics; it’s about delivering an
+                exceptional user experience.
+              </p>
+              <p>
+                I primarily work with React and modern CSS. Beyond coding, I
+                enjoy reading blogs about new technologies and spending my free
+                time gaming.
+              </p>
+
+              <div class="about-stats">
+                <div class="stat-item">
+                  <span class="stat-number">12+</span>
+                  <span class="stat-label">Projects Done</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">01+</span>
+                  <span class="stat-label">Years Exp.</span>
+                </div>
+              </div>
+
+              <a href="#contact" class="btn-outline">Say Hello!</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--------------------------
+       About Me Section Ends Here
+      ---------------------------->
+
+      <!---------------------------
+       Contact Section Starts Here
+      ----------------------------->
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <h2 class="section-title">
+            Get In <span class="text-blue">Touch</span>
+          </h2>
+          <div class="title-underline"></div>
+
+          <p class="contact-desc">
+            Have a question or want to discuss a new project? Feel free to drop
+            me a message below!
+          </p>
+          <div class="contact-wrapper">
+            <div class="contact-info">
+              <div class="info-box">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                  <a href="mailto:kazitasinhossen@gmail.com" target="_blank">
+                    <h4>Email Me</h4>
+                    <p>kazitasinhossen@email.com</p>
+                  </a>
+                </div>
+              </div>
+              <div class="info-box">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                  <a href="">
+                    <h4>Location</h4>
+                    <p>Khulna, Bangladesh</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <form
+              class="contact-form"
+              action="https://formspree.io/f/xqearwbb"
+              method="POST"
+            >
+              <div class="input-group">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                />
+                <input
+                  type="email"
+                  name="_replyto"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                required
+              />
+              <textarea
+                name="message"
+                style="resize: none"
+                placeholder="Your Message"
+                rows="5"
+                required
+              ></textarea>
+              <button type="submit" class="submit-btn">
+                Send Message <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-------------------------
+       Contact Section Ends Here
+      --------------------------->
+
+      <!--------------------------
+       Footer Section Starts Here 
+      ---------------------------->
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-socials">
+            <div>
+              <a href="tel:+8801310050878" aria-label="Phone">
+                <i class="fa-solid fa-phone"></i>
+              </a>
+              <a href="#" target="_blank">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="#" target="_blank">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="#" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://wa.me/+8801310050878"
+                target="_blank"
+                aria-label="WhatsApp"
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+
+              <a href="mailto:kazitasinhossen@gmail.com" aria-label="Email">
+                <i class="fa-regular fa-envelope"></i>
+              </a>
+
+              <a href="#" target="_blank" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+
+              <a href="#" target="_blank" aria-label="Twitter-X">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-text">
+            <p>&copy; 2026 Kazi Tasin Hossen. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+      <!------------------------
+       Footer Section Ends Here 
+      -------------------------->
+    </div>
+
+    <!-----------------------
+     Adding Java Script File
+    ------------------------->
+    <script src="script.js"></script>
+  </body>
+</html>

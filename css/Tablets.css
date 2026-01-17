@@ -1,0 +1,163 @@
+/*----------------------
+ Nav Section Starts Here 
+------------------------*/
+.logo {
+  width: 70%;
+  margin: 2% 0 0 2%;
+}
+
+.nav-bar {
+  padding-top: 3%;
+}
+
+.nav-menu {
+  padding-bottom: 10%;
+}
+
+/*---------------------
+ Nav Section Ends Here 
+-----------------------*/
+
+/*-----------------------
+ Hero Section Starts Here
+-------------------------*/
+.hero-section {
+  margin-top: 0%;
+  flex-direction: row;
+  padding: 0 2% 0 2%;
+}
+
+.name-glow {
+  font-size: 3rem;
+}
+
+.hero-title {
+  font-size: 6rem;
+}
+
+.hero-sub {
+  font-size: 5rem;
+}
+
+.typewriter {
+  font-size: 2.5rem;
+}
+
+.hero-bio {
+  font-size: 2rem;
+}
+
+.hero-btns {
+  gap: 10%;
+}
+
+.btn-primary {
+  font-size: 3rem;
+}
+
+.btn-secondary {
+  font-size: 3rem;
+}
+
+.hero-pic {
+  max-width: 20%;
+}
+/*---------------------
+ Hero Section Ends Here
+-----------------------*/
+
+/*---------------------------
+ Projects Section Starts Here 
+-----------------------------*/
+
+.project-info h3 {
+  font-size: 3rem;
+}
+
+.project-info p {
+  font-size: 1.7rem;
+}
+
+.project-tags span {
+  font-size: 1.5rem;
+}
+
+/*------------------------
+ Projects Section Ends Here 
+--------------------------*/
+
+/*---------------------------
+ About Me section Starts Here
+-----------------------------*/
+
+.about-wrapper {
+  gap: 80px;
+  flex-direction: row;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 3.7rem;
+}
+
+.stat-label {
+  font-size: 1.7rem;
+}
+
+.btn-outline {
+  font-size: 2.7rem;
+}
+
+/*-------------------------
+ About Me section Ends Here
+---------------------------*/
+
+/*--------------------------
+ Contact Section Starts Here
+----------------------------*/
+
+.contact-desc {
+  font-size: 1.8rem;
+}
+
+.info-box i {
+  font-size: 3.3rem;
+}
+
+.info-box h4 {
+  font-size: 2.3rem;
+}
+
+.info-box p {
+  font-size: 1.8rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 1.8rem;
+}
+
+.submit-btn {
+  font-size: 2.1rem;
+}
+
+/*------------------------
+ Contact Section Ends Here
+--------------------------*/
+
+/*-------------------------
+ Footer Section Starts Here 
+---------------------------*/
+
+.footer-socials {
+  flex-direction: row;
+  gap: 0;
+}
+
+.footer-text p {
+  font-size: 1.8rem;
+}
+
+/*------------------------
+ Footer Section Ends Here 
+-------------------------*/

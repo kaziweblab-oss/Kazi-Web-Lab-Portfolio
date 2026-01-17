@@ -1,0 +1,54 @@
+/*----------------------
+ Nav Section Starts Here 
+------------------------*/
+.nav-bar {
+  justify-content: right;
+}
+
+.nav-menu {
+  max-width: 70%;
+}
+
+/*---------------------
+ Nav Section Ends Here 
+-----------------------*/
+
+/*---------------------------
+ About Me section Starts Here
+-----------------------------*/
+
+.about-text p {
+  font-size: 1.8rem;
+}
+
+.stat-number {
+  font-size: 4rem;
+}
+
+.stat-label {
+  font-size: 2rem;
+}
+
+.btn-outline {
+  font-size: 3rem;
+}
+
+/*-------------------------
+ About Me section Ends Here
+---------------------------*/
+
+/*--------------------------
+ Contact Section Starts Here
+----------------------------*/
+
+.container h2 {
+  font-size: 3.5rem;
+}
+
+.container h2 span {
+  font-size: 2.1rem;
+}
+
+/*------------------------
+ Contact Section Ends Here
+--------------------------*/
