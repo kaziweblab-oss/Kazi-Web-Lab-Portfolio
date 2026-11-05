@@ -14,6 +14,6 @@ router.post("/", adminLogin);
 
 //protected routes
 router.get("/", verifyToken, verifyAdmin, getAdmin);
-router.put("/", verifyToken, verifyAdmin, updateAdmin);
+router.put("/",verifyToken,verifyAdmin, updateAdmin);
 
 export default router;

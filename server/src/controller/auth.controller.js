@@ -6,7 +6,7 @@ import { Users } from "../models/user.model.js";
 // get admin
 export const getAdmin = async (req, res) => {
   try {
-    const oldAdmin = await Users.findOne();
+    const oldAdmin = await Users.findOne().select("-password");
 
     if (!oldAdmin) {
       return res.status(404).json({
