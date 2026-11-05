@@ -25,6 +25,16 @@ app.use("/api/contacts", contactsRoutes);
 app.use("/api/technologies", technologiesRoutes);
 app.use("/api/admin", userRoutes);
 
+/*------------
+ Welcome Page
+ ------------*/
+app.get("/", (req, res) => {
+  res.status(200).json({
+    status: true,
+    message: "Welcome to KWL Portfolio Backend.",
+  });
+});
+
 /*-------------------
  create wildCard here
  --------------------*/
@@ -32,5 +42,16 @@ app.use((req, res) => {
   res.status(404).json({
     status: false,
     message: "!!!404 Page Not Found.",
+  });
+});
+
+/*------------------
+ Health check route
+ -------------------*/
+
+app.get("/api/health", (req, res) => {
+  res.status(200).json({
+    status: true,
+    message: "KWL Backend is also Live. Don't worry 😊😊😊 ",
   });
 });
