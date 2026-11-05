@@ -35,16 +35,6 @@ app.get("/", (req, res) => {
   });
 });
 
-/*-------------------
- create wildCard here
- --------------------*/
-app.use((req, res) => {
-  res.status(404).json({
-    status: false,
-    message: "!!!404 Page Not Found.",
-  });
-});
-
 /*------------------
  Health check route
  -------------------*/
@@ -53,5 +43,15 @@ app.get("/api/health", (req, res) => {
   res.status(200).json({
     status: true,
     message: "KWL Backend is also Live. Don't worry 😊😊😊 ",
+  });
+});
+
+/*-------------------
+ create wildCard here
+ --------------------*/
+app.use((req, res) => {
+  res.status(404).json({
+    status: false,
+    message: "!!!404 Page Not Found.",
   });
 });
