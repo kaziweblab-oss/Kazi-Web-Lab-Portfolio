@@ -172,3 +172,46 @@ export const adminLogin = async (req, res) => {
     });
   }
 };
+
+//reset initial admin data
+export const resetAdmin = async (req, res) => {
+  try {
+    const saltRounds = 10;
+    const initialAdmin = {
+      email: "kaziweblab@gmail.com",
+      pass: await bcrypt.hash("12345678", saltRounds),
+    };
+
+    const existAdmin = await Users.findOne().select("-password");
+
+    if (existAdmin) {
+      return res.status(400).json({
+        status: false,
+        message: "Admine Reset Failed. An admine was existed",
+        data: existAdmin,
+      });
+    }
+
+    const resetAdmin = await Users.create(
+      {
+        email: initialAdmin.email.toLowerCase(),
+        password: initialAdmin.pass,
+      },
+      {
+        new: true,
+        upsert: true,
+        runValidators: true,
+      },
+    );
+    res.status(200).json({
+      status: true,
+      message: "Admin Create successfull",
+      data: resetAdmin,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      status: false,
+      messege: error.message,
+    });
+  }
+};

@@ -25,6 +25,10 @@ const ProjectsSchema = mongoose.Schema(
       type: String,
       trim: true,
     },
+    thumbnail: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,

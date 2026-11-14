@@ -13,7 +13,14 @@ export const connectDB = async (url) => {
     console.log(`Mongo DB Runtime error found ${err.message}`);
   });
 
-  const conn = await mongoose.connect(url);
+  try {
+    const conn = await mongoose.connect(url);
 
-  console.log(`Mongo DB was Successfully conneted at ${conn.connection.host}`);
+    console.log(
+      `Mongo DB was Successfully conneted at ${conn.connection.host}`,
+    );
+  } catch (err) {
+    console.log(`Mongo DB connection error found ${err.message}`);
+    process.exit(1);
+  }
 };

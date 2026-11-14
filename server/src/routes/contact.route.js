@@ -10,6 +10,6 @@ const router = express.Router();
 
 router.get("/", getContacts);
 
-router.put("/",verifyToken,verifyAdmin, createOrUpdateContact);
+router.put("/", verifyToken, verifyAdmin, createOrUpdateContact);
 
 export default router;

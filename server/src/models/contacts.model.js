@@ -21,10 +21,10 @@ const ContactsSchema = mongoose.Schema(
       youtube: {
         type: String,
       },
-      instagram: {
+      github: {
         type: String,
       },
-      github: {
+      instagram: {
         type: String,
       },
       tiktok: {

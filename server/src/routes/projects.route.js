@@ -8,6 +8,7 @@ import {
 } from "../controller/project.controller.js";
 import { verifyAdmin } from "../middleware/verifyAdmin.middleware.js";
 import { verifyToken } from "../middleware/verifyToken.middleware.js";
+import { uploadProjectThumbnail } from "../middleware/multer.middleware.js";
 
 const router = express.Router();
 
@@ -16,8 +17,20 @@ router.get("/", getAllProject);
 router.get("/recent-projects", getRecentProject);
 
 // protected routes here
-router.post("/", verifyToken, verifyAdmin, createProject);
+router.post(
+  "/",
+  verifyToken,
+  verifyAdmin,
+  uploadProjectThumbnail,
+  createProject,
+);
 router.delete("/:id", verifyToken, verifyAdmin, deleteProject);
-router.patch("/:id", verifyToken, verifyAdmin, updateProject);
+router.patch(
+  "/:id",
+  verifyToken,
+  verifyAdmin,
+  uploadProjectThumbnail,
+  updateProject,
+);
 
 export default router;

@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
+
 import { Projects } from "../models/projects.model.js";
+// import { imageKit } from "../config/imageKit.js";
+import { uploadImageToImageKit } from "../utils/uploadImage.js";
 
 //get Recent Project
 export const getRecentProject = async (req, res) => {
@@ -50,6 +53,7 @@ export const createProject = async (req, res) => {
     }
 
     const { name, desc, usedTools, liveUrl, gitLink } = body;
+    const uploadFile = req.file;
 
     const missingFiled = [];
 
@@ -57,6 +61,7 @@ export const createProject = async (req, res) => {
     if (!desc) missingFiled.push("Project Description");
     if (!usedTools || usedTools.length === 0) missingFiled.push("Used Tools");
     if (!liveUrl) missingFiled.push("Live Url");
+    if (!uploadFile) missingFiled.push("Thumbnail");
 
     if (!Array.isArray(usedTools)) {
       return res.status(400).json({
@@ -87,7 +92,27 @@ export const createProject = async (req, res) => {
       });
     }
 
-    await Projects.create({ name, desc, usedTools, liveUrl, gitLink });
+    let thumbnail = "";
+    try {
+      thumbnail = await uploadImageToImageKit(
+        uploadFile,
+        "/portfolio-projects",
+      );
+    } catch (uploadError) {
+      return res.status(500).json({
+        status: false,
+        message: uploadError.message,
+      });
+    }
+
+    await Projects.create({
+      name,
+      desc,
+      usedTools,
+      liveUrl,
+      gitLink,
+      thumbnail,
+    });
 
     res.status(201).json({
       status: true,
@@ -174,9 +199,11 @@ export const updateProject = async (req, res) => {
 
     const { name, desc, usedTools, liveUrl, gitLink } = body;
 
+    const uploadFile = req.file;
+
     const updatedData = [];
 
-    if (!name && !desc && !usedTools && !liveUrl && !gitLink) {
+    if (!name && !desc && !usedTools && !liveUrl && !gitLink && !uploadFile) {
       return res.status(400).json({
         status: false,
         message:
@@ -189,6 +216,7 @@ export const updateProject = async (req, res) => {
     if (usedTools) updatedData.push("Used Tools");
     if (liveUrl) updatedData.push("Live Url");
     if (gitLink) updatedData.push("Git Link");
+    if (uploadFile) updatedData.push("Thumbnail");
 
     const oldProject = await Projects.findById(id);
 
@@ -198,6 +226,11 @@ export const updateProject = async (req, res) => {
         message: "Project Not Found with this ID.",
       });
     }
+
+    const thumbnail = await uploadImageToImageKit(
+      uploadFile,
+      "/portfolio-projects",
+    );
 
     const conflictFields = [];
     if ("name" in body && name === oldProject.name) {
@@ -223,6 +256,10 @@ export const updateProject = async (req, res) => {
 
     if ("gitLink" in body && gitLink === oldProject.gitLink) {
       conflictFields.push("Git Link");
+    }
+
+    if (thumbnail === oldProject.thumbnail) {
+      conflictFields.push("Thumbnail");
     }
 
     if (conflictFields.length > 0) {
