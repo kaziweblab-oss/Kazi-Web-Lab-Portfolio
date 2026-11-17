@@ -8,6 +8,7 @@ import * as FaIcons from "react-icons/fa";
 
 import { getTechnologiesData } from "../../../store/slices/technologiesSlice";
 import LoadingSpinner from "../../../utils/loadingSpinner";
+import { SectionTitle } from "../sectionTitle";
 
 function HomeTechnologies() {
   const dispatch = useDispatch();
@@ -61,15 +62,19 @@ function HomeTechnologies() {
     dispatch(getTechnologiesData());
   }, [dispatch]);
 
+  /*-------------
+   Start Ui Here 
+   -------------*/
   return (
     <div className="text-white flex flex-col gap-5 justify-center items-center ">
-      <h2 className="relative text-2xl font-bold inline-block ">
-        Technologies I used
+      {/* <h2 className="relative text-2xl font-bold inline-block ">
+        
         <span
           className="absolute w-70 h-[0.15rem] bg-[linear-gradient(90deg,transparent,rgb(100,118,255),transparent)]
           left-1/2 -translate-x-1/2 -bottom-1.5 "
         />
-      </h2>
+      </h2> */}
+      <SectionTitle title="Technologies I used" />
 
       {loading && <LoadingSpinner />}
       {error && <p className="text-xl text-red-600 ">{error}</p>}

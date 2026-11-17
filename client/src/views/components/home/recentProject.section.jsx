@@ -4,6 +4,7 @@ import { getProjectsData } from "../../../store/slices/projectSlice";
 import ProjectCard from "../projectCard";
 import LoadingSpinner from "../../../utils/loadingSpinner";
 import { useNavigate } from "react-router-dom";
+import { SectionTitle } from "../sectionTitle";
 
 function RecentProject() {
   const {
@@ -23,10 +24,7 @@ function RecentProject() {
     <div className="flex flex-col gap-10 pb-10 text-2xl ">
       <div className="flex w-full justify-between ">
         <div className="w-full flex justify-center items-center ">
-          <h2 className="relative inline-block text-white text-center font-bold ">
-            My Recent Projects
-            <span className="absolute bg-[linear-gradient(90deg,transparent,rgb(100,118,255),transparent)] w-70 h-[0.15rem] -translate-x-1/2 left-1/2 -bottom-1  " />
-          </h2>
+          <SectionTitle title="My Recent Projects" />
         </div>
         <button
           className="right-0 text-sm w-20 py-1 px-2 border-cyan-500/50 hover:border-cyan-400

@@ -12,6 +12,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import LoadingSpinner from "../../utils/loadingSpinner";
+import { SectionTitle } from "../components/sectionTitle";
 
 export const Footer = () => {
   const iconsClassName =
@@ -71,16 +72,9 @@ export const Footer = () => {
           return (
             <ul
               key={index}
-              className="flex flex-col justify-center items-center gap-4 p-4  "
+              className="flex flex-col justify-center items-center gap-5 p-4  "
             >
-              <h3 className="relative text-2xl font-bold inline-block ">
-                {section.title}
-
-                <span
-                  className="absolute left-1/2 -translate-x-1/2 -bottom-1 h-[0.15rem] 
-                  w-50 bg-[linear-gradient(90deg,transparent,rgb(100,118,255),transparent)] "
-                />
-              </h3>
+              <SectionTitle title={section.title} />
               {section.links.map((link, index) => {
                 return (
                   <li
@@ -94,7 +88,7 @@ export const Footer = () => {
                       {link.name}
                       <span
                         className="absolute left-0 bottom-0 w-0 h-[0.1rem] rounded-full bg-[#6a74ff] 
-                      transition-all duration-300 group-hover:w-full "
+                          transition-all duration-300 group-hover:w-full "
                       />
                     </span>
                   </li>

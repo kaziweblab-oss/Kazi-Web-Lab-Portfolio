@@ -48,8 +48,8 @@ export const Nav = () => {
     <>
       <nav
         ref={menuRef}
-        className=" flex bg-[rgb(15,23,42)] h-25 justify-between items-center p-4
-         shadow-[0px_5px_10px_rgba(132,116,240,0.5)] border-b-2 border-[rgb(100,118,255,0.1)]  "
+        className="relative w-full flex bg-[rgb(15,23,42)] h-25 justify-between items-center p-4
+         shadow-[0px_5px_10px_rgba(132,116,240,0.5)] border-b-2 border-[rgb(100,118,255,0.1)] "
       >
         <div className="w-20 h-20 flex justify-around items-center left-0 md:ml-4 ">
           <Link to={"/"}>
@@ -83,19 +83,22 @@ export const Nav = () => {
           Mobile Nav Menu
           ----------------*/}
         <ul
-          className={`absolute flex flex-col transition-all duration-500 top-25 bg-[rgba(15,23,42,0.9)] 
-            p-5 w-100 h-full gap-5 shadow-[0px_5px_10px_rgba(132,116,240,0.4)] z-999  ${isMenuOpen ? "left-[60%]" : "left-full"}`}
+          className={`fixed right-0 top-[6.25rem] bottom-0 flex flex-col w-[min(55vw,25rem)] overflow-y-auto overflow-x-hidden
+            p-5 gap-5 bg-[rgb(15,23,42,0.97)] shadow-[0px_5px_10px_rgb(132,116,240,0.4)]
+            z-[999] transition-transform duration-500 ease-in-out 
+            ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
         >
           {Object.entries(navMenus).map(([menu, link]) => {
             return (
-              <li key={menu}>
-                <span
-                  className="group relative inline-block  text-lg  font-medium text-white cursor-pointer hover:text-[#6a74ff] "
-                  onClick={() => {
-                    navigate(link);
-                    setIsMenuOpen(false);
-                  }}
-                >
+              <li
+                className="group cursor-pointer"
+                key={menu}
+                onClick={() => {
+                  navigate(link);
+                  setIsMenuOpen(false);
+                }}
+              >
+                <span className=" relative inline-block  text-lg  font-medium text-white cursor-pointer hover:text-[#6a74ff] ">
                   {menu}
                   <span
                     className="absolute left-0 bottom-0 w-0 h-[0.1rem] 
@@ -115,12 +118,7 @@ export const Nav = () => {
           {Object.entries(navMenus).map(([menu, link]) => {
             return (
               <li key={menu}>
-                <span
-                  className="relative inline-block group text-lg font-medium hover:cursor-pointer hover:text-[#6a74ff] "
-                  onClick={() => {
-                    navigate(link);
-                  }}
-                >
+                <span className="relative inline-block group text-lg font-medium hover:cursor-pointer hover:text-[#6a74ff] ">
                   {" "}
                   {menu}
                   <span
