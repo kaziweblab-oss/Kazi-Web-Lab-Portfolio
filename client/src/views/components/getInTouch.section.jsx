@@ -59,6 +59,7 @@ function GetInTouchSection() {
                 type="text"
                 name="name"
                 placeholder="Enter Your Name"
+                required
                 className="p-3 text-lg w-full md:w-full rounded-lg bg-[#1e293b] border border-[rgb(100,118,255,0.1)] 
                 focus:outline-none focus:border-[#6a74ff] "
               />
@@ -68,6 +69,7 @@ function GetInTouchSection() {
                 type="email"
                 name="email"
                 placeholder="Enter Your Mail"
+                required
                 className="p-3 text-lg  w-full md:w-full bg-[#1e293b] border rounded-lg border-[rgb(100,118,255,0.1)]
                 focus:outline-none focus:border-[#6a74ff] "
               />
@@ -78,6 +80,7 @@ function GetInTouchSection() {
               name="message"
               id="message"
               placeholder="Enter Your Message Here"
+              required
               className="w-full h-40 p-3 text-lg bg-[#1e293b] border rounded-lg border-[rgb(100,118,255,0.1)] resize-none  scrollbar-none
               focus:outline-none focus:border-[#6a74ff] "
             ></textarea>
@@ -97,7 +100,7 @@ function GetInTouchSection() {
             <button
               type="reset"
               className="w-full text-lg bg-red-500 p-3 rounded-lg cursor-pointer transition-all duration-300 
-            hover:bg-[#cb2129] hover:-translate-y-1 hover:shadow-[0_5px_10px_rgb(251,44,54,0.4)] "
+              hover:bg-[#cb2129] hover:-translate-y-1 hover:shadow-[0_5px_10px_rgb(251,44,54,0.4)] "
             >
               Reset
             </button>

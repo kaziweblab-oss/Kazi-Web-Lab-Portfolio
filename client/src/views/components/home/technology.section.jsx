@@ -73,17 +73,27 @@ function HomeTechnologies() {
 
       {loading && <LoadingSpinner />}
       {error && <p className="text-xl text-red-600 ">{error}</p>}
-      {technologies?.status && technologies?.data?.[0]?.technologies ? (
+      {!error && !technologies.status && (
+        <p className="text-center text-red-200 text-lg ">
+          Somethings Went Wrong.
+        </p>
+      )}
+      {technologies.status && technologies?.data?.length === 0 && (
+        <p className="text-center text-red-200 text-xl">
+          No technologies found.
+        </p>
+      )}
+      {technologies?.status && technologies?.data?.[0]?.technologies && (
         <div className="flex flex-wrap items-center gap-10 justify-center py-10">
           {technologies?.data?.[0]?.technologies?.map((tech, index) => {
             return (
               <div
                 key={index}
                 className="group p-8 w-40 flex justify-center items-center 
-              bg-[rgba(30,41,59,0.5)] border border-[rgb(100,118,255,0.1)]
-              rounded-2xl cursor-pointer transition-all duration-300 ease-in-out
-              hover:scale-110 hover:-translate-y-2 hover:border-[#6476ff] 
-              hover:shadow-[0_10px_30px_rgb(100,118,255,0.2)] hover:bg-[rgb(100,118,255,0.05)] "
+                bg-[rgba(30,41,59,0.5)] border border-[rgb(100,118,255,0.1)]
+                rounded-2xl cursor-pointer transition-all duration-300 ease-in-out
+                hover:scale-110 hover:-translate-y-2 hover:border-[#6476ff] 
+                hover:shadow-[0_10px_30px_rgb(100,118,255,0.2)] hover:bg-[rgb(100,118,255,0.05)] "
               >
                 <span className="text-4xl md:text-5xl   ">
                   {getDynamicIcon(tech)}
@@ -92,9 +102,12 @@ function HomeTechnologies() {
             );
           })}
         </div>
-      ) : (
-        <p className="text-red-200 text-xl">No Technologyes found.</p>
       )}
+      {technologies?.status &&
+        technologies?.data?.[0] &&
+        technologies.data[0].length === 0 && (
+          <p className="text-red-200 text-xl text-lg">No Technologies found.</p>
+        )}
     </div>
   );
 }

@@ -1,10 +1,12 @@
 import { Outlet } from "react-router-dom";
 import { Nav } from "./nav";
 import { Footer } from "./footer";
+import { ScrollToTop } from "../../utils/scrollToTop";
 
 export const MainLayout = () => {
   return (
     <>
+      <ScrollToTop />
       <Nav />
       <div
         className="min-h-screen font-[Roboto,sans-serif] bg-[rgba(15,23,42,0.95)] 

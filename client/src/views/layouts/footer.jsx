@@ -108,7 +108,14 @@ export const Footer = () => {
           {error && (
             <p className="text-xl text-red-500 text-center ">{error}</p>
           )}
-          {contacts?.status && contacts?.data?.[0]?.contacts ? (
+          {contacts.status && contacts?.data?.length === 0 && (
+            <p className="text-center text-red-200 text-lg ">
+              No contact Found.
+            </p>
+          )}
+          {!error && !contacts.status && <p>Something Went's Wrong.</p>}
+          {contacts?.status &&
+            contacts?.data?.[0]?.contacts &&
             Object.entries(contacts.data[0].contacts).map(([name, path]) => {
               if (name.toLowerCase() === "phone") {
                 return (
@@ -154,14 +161,15 @@ export const Footer = () => {
                 );
               }
               return null;
-            })
-          ) : (
-            <p className="text-center text-red-200 text-lg ">
-              No contact Found.
+            })}
+
+          {contacts?.status && contacts?.data?.socials?.length === 0 && (
+            <p className="text-center text-lg text-red-200 ">
+              No Socials data found.
             </p>
           )}
-
-          {contacts?.status && contacts?.data?.[0]?.socials ? (
+          {contacts?.status &&
+            contacts?.data?.[0]?.socials &&
             Object.entries(contacts.data[0].socials).map(([name, path]) => {
               if (name.toLowerCase() === "facebook") {
                 return (
@@ -205,12 +213,7 @@ export const Footer = () => {
                   </a>
                 );
               }
-            })
-          ) : (
-            <p className="text-center text-lg text-red-200 ">
-              No Socials data found.
-            </p>
-          )}
+            })}
         </div>
         <span className="text-center ">
           &copy; 2026 Kazi Tasin Hossen. All rights reserved.

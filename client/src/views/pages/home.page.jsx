@@ -1,5 +1,5 @@
 // import Home Page component Here
-import GetInTouchSection from "../components/home/getInTouch.section";
+import GetInTouchSection from "../components/getInTouch.section";
 import { HomeHero } from "../components/home/hero.section";
 import RecentProject from "../components/home/recentProject.section";
 import HomeTechnologies from "../components/home/technology.section";

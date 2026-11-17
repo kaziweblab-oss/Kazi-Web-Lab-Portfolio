@@ -1,9 +1,9 @@
+import { AboutHero } from "../components/about/hero.section";
+
 export const AboutPage = () => {
   return (
-    <>
-      <div>
-        <h2>Welcome to About Page.</h2>
-      </div>
-    </>
+    <div className="text-white ">
+      <AboutHero />
+    </div>
   );
 };

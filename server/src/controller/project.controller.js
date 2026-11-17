@@ -11,7 +11,7 @@ export const getRecentProject = async (req, res) => {
 
     res.status(200).json({
       status: true,
-      message: "Project retrive Successfull.",
+      message: "Project retrive Successful.",
       data: recentProjects,
     });
   } catch (error) {

@@ -41,13 +41,17 @@ function RecentProject() {
       </div>
       {loading && <LoadingSpinner />}
       {error && <p className="text-xl text-red-600 text-center ">{error}</p>}
-      {projects?.status && projects?.data.length > 0 ? (
+      {!error && !projects.status && (
+        <p className="text-center text-red-200 ">Something Went Wrong.</p>
+      )}
+      {projects?.status && projects?.data && projects.data.length > 0 && (
         <div className="grid grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-6 ">
           {projects.data.map((project) => {
             return <ProjectCard project={project} key={project._id} />;
           })}
         </div>
-      ) : (
+      )}
+      {projects.status && projects?.data && projects.data.length === 0 && (
         <p className="text-center text-red-200 text-xl">
           No Recent Project Founds.
         </p>
