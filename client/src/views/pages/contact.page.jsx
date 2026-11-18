@@ -30,7 +30,7 @@ export const ContactPage = () => {
               Somethings Went Wrong.
             </p>
           )}
-          {contacts?.status && contacts?.data?.[0].length === 0 && (
+          {contacts?.status && contacts?.data?.[0]?.length === 0 && (
             <p className="text-center text-lg text-red-200">
               No Contact Data Found.
             </p>
