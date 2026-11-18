@@ -33,15 +33,15 @@ export const MyStory = () => {
   return (
     <div className="flex flex-col gap-5 ">
       <SectionTitle title="My Story" />
-      <div className="flex flex-col gap-5 text-lg ">
+      <div className="flex flex-col gap-5 text-lg md:text-xl lg:text-2xl">
         {myStory.map((story, index) => {
           const Icon = story.icon;
           return (
             <div
-              className={`flex justify-center items-center gap-5 `}
+              className={`flex items-center gap-5 `}
               key={index}
             >
-              <Icon className={` text-2xl mt-1 shrink-0 ${story.color} `} />
+              <Icon className={` text-2xl md:text-3xl lg:text-4xl mt-1 shrink-0 ${story.color} `} />
               <p className="text-slate-300">{story.desc}</p>
             </div>
           );

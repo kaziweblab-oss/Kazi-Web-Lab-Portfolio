@@ -6,7 +6,7 @@ import { WhatIDo } from "../components/about/whatIDo.section";
 
 export const AboutPage = () => {
   return (
-    <div className="flex flex-col gap-20 p-[3rem_0]">
+    <div className="flex flex-col gap-20 p-[3rem_0] text-lg md:text-xl lg:text-2xl">
       <AboutHero />
       <MyStory />
       <WhatIDo />

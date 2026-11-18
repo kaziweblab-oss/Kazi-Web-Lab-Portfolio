@@ -12,6 +12,9 @@ function GetInTouchSection() {
         Get In Touch Section{" "}
         <span className="absolute left-1/2 -translate-x-1/2 -bottom-1 w-70  h-[0.15rem] bg-[linear-gradient(90deg,transparent,rgb(100,118,255),transparent)] " />
       </h2>
+      <p className="text-lg text-center">
+        Have a project in mind? Let's discuss how we can work together.
+      </p>
       <div className="flex flex-col gap-10 md:flex-row md:justify-between">
         <div className="flex flex-col gap-3 text-white gap-10 md:w-[50%] ">
           <button

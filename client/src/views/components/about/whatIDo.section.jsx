@@ -40,7 +40,7 @@ export const WhatIDo = () => {
     },
   ];
   return (
-    <div className="flex flex-col gap-10 ">
+    <div className="flex flex-col gap-10 text-lg md:text-xl lg:text-2xl ">
       <SectionTitle title="What I Do" />
       <div className="flex flex-col gap-5 ">
         {mySkills.map((skill, index) => {
@@ -48,8 +48,8 @@ export const WhatIDo = () => {
           return (
             <div className="flex flex-col gap-2 " key={index}>
               <div className={`flex gap-2 items-center ${skill.iColor} `}>
-                <Icon className={`text-xl`} /> <FaArrowRight />
-                <h3 className={`font-bold text-lg ${skill.tColor}`}>
+                <Icon className={`text-xl md:text-2xl lg:text-3xl`} /> <FaArrowRight />
+                <h3 className={`font-bold ${skill.tColor}`}>
                   {skill.title} :{" "}
                 </h3>
               </div>

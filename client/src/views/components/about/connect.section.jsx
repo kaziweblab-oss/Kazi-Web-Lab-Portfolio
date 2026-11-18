@@ -34,7 +34,9 @@ export const Connect = () => {
           const Icon = para.icon;
           return (
             <div className="flex items-center gap-5 ">
-              <Icon className={`${para.iColor} text-2xl`} />
+              <Icon
+                className={`${para.iColor} text-2xl md:text-3xl lg:text-4xl`}
+              />
               <p className="flex justify-between items-center w-full ">
                 {para.desc}
                 {para.navigate && (

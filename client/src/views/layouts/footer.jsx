@@ -3,21 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getContactsData } from "../../store/slices/contactSlices";
 
-import {
-  FaFacebook,
-  FaFacebookMessenger,
-  FaGithub,
-  FaPhoneAlt,
-  FaWhatsapp,
-  FaYoutube,
-} from "react-icons/fa";
 import LoadingSpinner from "../../utils/loadingSpinner";
 import { SectionTitle } from "../components/sectionTitle";
+import { Icon } from "../components/icon";
 
 export const Footer = () => {
-  const iconsClassName =
-    "transition-all duration-300 ease-in-out text-4xl text-[rgb(100,118,255)] hover:text-gray-300 hover:scale-120   ";
-
   const navigate = useNavigate();
 
   const scrollX = (top) => {
@@ -111,50 +101,9 @@ export const Footer = () => {
           {contacts?.status &&
             contacts?.data?.[0]?.contacts &&
             Object.entries(contacts.data[0].contacts).map(([name, path]) => {
-              if (name.toLowerCase() === "phone") {
-                return (
-                  <a
-                    key={name}
-                    href={`tel:${path}`}
-                    target="_blank"
-                    aria-label="phone"
-                    rel="noreferrer"
-                    className={iconsClassName}
-                  >
-                    <FaPhoneAlt />
-                  </a>
-                );
+              if (["phone", "whatsApp", "messenger"].includes(name)) {
+                return <Icon key={name} name={name} path={path} />;
               }
-
-              if (name.toLowerCase() === "whatsapp") {
-                return (
-                  <a
-                    key={name}
-                    href={`https://wa.me/${path}`}
-                    target="_blank"
-                    aria-label="whatsApp"
-                    rel="noreferrer"
-                    className={iconsClassName}
-                  >
-                    <FaWhatsapp />
-                  </a>
-                );
-              }
-              if (name.toLowerCase() === "messenger") {
-                return (
-                  <a
-                    key={name}
-                    href={path}
-                    target="_blank"
-                    aria-label="messenger"
-                    rel="noreferrer"
-                    className={iconsClassName}
-                  >
-                    <FaFacebookMessenger />
-                  </a>
-                );
-              }
-              return null;
             })}
 
           {contacts?.status && contacts?.data?.socials?.length === 0 && (
@@ -165,47 +114,8 @@ export const Footer = () => {
           {contacts?.status &&
             contacts?.data?.[0]?.socials &&
             Object.entries(contacts.data[0].socials).map(([name, path]) => {
-              if (name.toLowerCase() === "facebook") {
-                return (
-                  <a
-                    key={name}
-                    href={path}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="facebook"
-                    className={iconsClassName}
-                  >
-                    <FaFacebook />
-                  </a>
-                );
-              }
-              if (name.toLowerCase() === "youtube") {
-                return (
-                  <a
-                    key={name}
-                    href={path}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="youtube"
-                    className={iconsClassName}
-                  >
-                    <FaYoutube />
-                  </a>
-                );
-              }
-              if (name.toLowerCase() === "github") {
-                return (
-                  <a
-                    key={name}
-                    href={path}
-                    aria-label="github"
-                    rel="noreferrer"
-                    target="_blank"
-                    className={iconsClassName}
-                  >
-                    <FaGithub />
-                  </a>
-                );
+              if (["facebook", "youtube", "github"].includes(name)) {
+                return <Icon key={name} name={name} path={path} />;
               }
             })}
         </div>

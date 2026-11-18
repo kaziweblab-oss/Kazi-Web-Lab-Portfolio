@@ -117,7 +117,13 @@ export const Nav = () => {
         <ul className="hidden md:flex w-full justify-around p-4 h-auto text-white md:ml-4">
           {Object.entries(navMenus).map(([menu, link]) => {
             return (
-              <li key={menu}>
+              <li
+                key={menu}
+                onClick={() => {
+                  navigate(link);
+                  setIsMenuOpen(false);
+                }}
+              >
                 <span className="relative inline-block group text-lg font-medium hover:cursor-pointer hover:text-[#6a74ff] ">
                   {" "}
                   {menu}
