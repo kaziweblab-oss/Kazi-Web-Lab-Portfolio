@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
-import { ContactInfo } from "../components/contact/contactInfo.section";
-import { getContactsData } from "../../store/slices/contactSlices";
-import GetInTouchSection from "../components/getInTouch.section";
-import LoadingSpinner from "../../utils/loadingSpinner";
+import { ContactInfo } from "../../components/contact/contactInfo.section";
+import { getContactsData } from "../../../store/slices/contactSlices";
+import GetInTouchSection from "../../components/getInTouch.section";
+import LoadingSpinner from "../../../utils/loadingSpinner";
 
 export const ContactPage = () => {
   const dispatch = useDispatch();

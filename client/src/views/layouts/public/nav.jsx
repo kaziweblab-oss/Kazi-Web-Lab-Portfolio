@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../assets/kwl-nexus-icon-dark.png";
+import logo from "../../../assets/kwl-nexus-icon-dark.png";
 import { useEffect, useRef, useState } from "react";
 
 import { RxCross2, RxHamburgerMenu } from "react-icons/rx";

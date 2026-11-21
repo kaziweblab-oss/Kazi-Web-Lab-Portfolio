@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { SearchBar } from "../components/project/searchBar";
+import { SearchBar } from "../../components/project/searchBar";
 import { useEffect } from "react";
-import { getProjectsData } from "../../store/slices/projectSlice";
-import LoadingSpinner from "../../utils/loadingSpinner";
-import ProjectCard from "../components/projectCard";
+import { getProjectsData } from "../../../store/slices/projectSlice";
+import LoadingSpinner from "../../../utils/loadingSpinner";
+import ProjectCard from "../../components/projectCard";
 
 export const ProjectPage = () => {
   const {

@@ -2,6 +2,7 @@ import axios from "axios";
 
 const API = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL,
+  withCredentials: true,
   headers: {
     "Content-Type": "application/json",
   },
@@ -18,3 +19,6 @@ export const fetchTechnologies = () => API.get("/api/technologies");
 
 // users api calling
 export const fetchAdmin = () => API.get("/api/admin");
+
+export const loginAdmin = (email, pass) =>
+  API.post("/api/admin", { email, pass });

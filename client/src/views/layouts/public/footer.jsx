@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getContactsData } from "../../store/slices/contactSlices";
+import { getContactsData } from "../../../store/slices/contactSlices";
 
-import LoadingSpinner from "../../utils/loadingSpinner";
-import { SectionTitle } from "../components/sectionTitle";
-import { Icon } from "../components/icon";
+import LoadingSpinner from "../../../utils/loadingSpinner";
+import { SectionTitle } from "../../components/sectionTitle";
+import { Icon } from "../../components/icon";
 
 export const Footer = () => {
   const navigate = useNavigate();

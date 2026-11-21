@@ -3,13 +3,23 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 
 export const app = express();
+const clientOrigin = process.env.CLIENT_URL;
+
+if (!clientOrigin) {
+  throw new Error("CLIENT_URL env variable are Required.");
+}
 
 /*-----------------------
  default middleware here
  -----------------------*/
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: clientOrigin,
+    credentials: true,
+  }),
+);
 app.use(cookieParser());
 
 /*-----------------
